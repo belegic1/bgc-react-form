@@ -15,18 +15,19 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
   },
 };
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'secondary',
+    onClick: () => console.log("hello")
   },
 };
 export const Error: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'error',
   },
 };
