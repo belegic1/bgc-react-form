@@ -1,7 +1,16 @@
 import React from "react";
 import { useForm } from "../FormContext/FormContext";
 import Button from "../Button/Button";
-import "./FormInput.css"
+import "./FormInput.css";
+
+/**
+ * @param  {string} type Type of input
+ * @param {string} name name for the imput, must match with propertu from the initial values
+ * @param{boolean} required  
+ * @param {string} placeholder
+ * @param {strin | number} value
+  * 
+ */
 
 interface FormInputProps {
   type?: string;
@@ -11,8 +20,8 @@ interface FormInputProps {
   value?: string;
 }
 
- const FormInput: React.FC<FormInputProps> = ({
-  type = 'text',
+const FormInput: React.FC<FormInputProps> = ({
+  type = "text",
   name,
   required,
   placeholder,
@@ -21,17 +30,16 @@ interface FormInputProps {
   const { data, handleChange } = useForm();
 
   return (
-    <div >
+    <div>
       <input
-        
         placeholder={
           placeholder ||
-          name?.split('.').reduce((acc: string, val: string) => val)
+          name?.split(".").reduce((acc: string, val: string) => val)
         }
         value={
           value ||
           name
-            ?.split('.')
+            ?.split(".")
             .reduce((val: any, propName: string) => val[propName], data)
         }
         onChange={(e) => handleChange(e)}
@@ -42,6 +50,5 @@ interface FormInputProps {
     </div>
   );
 };
-
 
 export default FormInput;

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import './Button.css';
-import { Variant } from '../../types/Variant';
+import React, { useState } from "react";
+import "./Button.css";
+import { Variant } from "../../types/Variant";
 
 interface ButtonProps {
   label?: string;
   variant?: Variant;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   children: React.ReactNode;
   onClick?: () => void;
 }
 const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  type = 'button',
+  variant = "primary",
+  type = "button",
   children,
   onClick,
 }) => {

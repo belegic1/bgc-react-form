@@ -1,0 +1,19 @@
+{
+  "source": {
+    "include": "./dist/cjs",
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": ".+\\test.js(doc|x)?$"
+  },
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "destination": "./docs/"
+  }
+}
